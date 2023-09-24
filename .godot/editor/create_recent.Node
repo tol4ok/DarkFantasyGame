@@ -1,3 +1,6 @@
+Panel
+TextureRect
+ColorRect
 CollisionShape2D
 Area2D
 StateMachine
@@ -28,5 +31,3 @@ ParallaxBackground
 LightOccluder2D
 TextureButton
 Control
-ColorRect
-CanvasLayer

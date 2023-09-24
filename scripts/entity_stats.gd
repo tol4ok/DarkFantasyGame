@@ -10,22 +10,26 @@ var friction: float
 var acceleration: float
 
 var jump_force: float
-var health: float
+var current_health: float
+var max_health: float
 var armour: int
 
-func _ready():
+func _init():
 	movement_speed = 150
 	friction = 32
 	acceleration = 32
 	
 	jump_force = 200
-	health = 10
+	current_health = 10
+	max_health = 10
 	armour = 1
 
-func recive_damage(damage: DamageInfo):
-	health -= (damage.amount - armour)
-	emit_signal("health_changed", health, damage.amount)
+func recieve_damage(damage: DamageInfo):
+	current_health -= damage.amount
+	print("Health changed from ", current_health + damage.amount, " to ", current_health)
+	emit_signal("health_changed", current_health, damage.amount)
 
-func recive_heal(amount: float):
-	health += amount
-	emit_signal("health_changed", health, amount)
+func recieve_heal(amount: float):
+	current_health += amount
+	print("Health changed from ", current_health - amount, " to ", current_health)
+	emit_signal("health_changed", current_health, amount)

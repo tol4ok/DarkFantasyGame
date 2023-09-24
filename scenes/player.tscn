@@ -767,7 +767,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"jump",
-"speed": 10.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -954,9 +954,9 @@ script = ExtResource("1_6unf3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_77wig")
-animation = &"attack"
+animation = &"jump"
 autoplay = "stand_idle"
-frame = 7
+frame = 4
 frame_progress = 1.0
 
 [node name="UpperBodyCollision" type="CollisionShape2D" parent="."]
