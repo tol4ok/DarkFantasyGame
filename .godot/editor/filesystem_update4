@@ -1,0 +1,12 @@
+res://scenes/parallax_background.tscn
+res://scenes/ui.tscn
+res://scenes/test_scene.tscn
+res://scenes/player.tscn
+res://scenes/menu.tscn
+res://scenes/campfire.tscn
+res://scripts/player.gd
+res://scripts/player states/player_idle.gd
+res://scripts/state_machine.gd
+res://scripts/player states/player_attack.gd
+res://scripts/enemy_behavior.gd
+res://scenes/enemy.tscn

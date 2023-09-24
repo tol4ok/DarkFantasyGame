@@ -1,0 +1,93 @@
+[gd_scene load_steps=13 format=3 uid="uid://t8d76epl5vdv"]
+
+[ext_resource type="Texture2D" uid="uid://dw714yqpo7r6p" path="res://assets/Props/spr_FirePlace_strip.png" id="1_u7473"]
+[ext_resource type="Texture2D" uid="uid://dbj7d4smddwq5" path="res://assets/Light/light.png" id="2_2c3xn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lap34"]
+atlas = ExtResource("1_u7473")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ps07u"]
+atlas = ExtResource("1_u7473")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvmhm"]
+atlas = ExtResource("1_u7473")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03nn3"]
+atlas = ExtResource("1_u7473")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_erqpc"]
+atlas = ExtResource("1_u7473")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6h1d"]
+atlas = ExtResource("1_u7473")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8yk7r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lap34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ps07u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvmhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03nn3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_erqpc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6h1d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_pr2xc"]
+offsets = PackedFloat32Array(0, 0.555556, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 0, 0.392157, 1, 1, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ji75i"]
+gradient = SubResource("Gradient_pr2xc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8kqrd"]
+lifetime_randomness = 0.5
+emission_shape = 3
+emission_box_extents = Vector3(9, 1, 1)
+particle_flag_disable_z = true
+gravity = Vector3(0, -98, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_max = 3.0
+color_ramp = SubResource("GradientTexture1D_ji75i")
+
+[node name="Campfire" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_8yk7r")
+autoplay = "default"
+frame_progress = 0.479828
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, 24)
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_8kqrd")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, 24)
+color = Color(1, 0.741176, 0.270588, 1)
+energy = 2.0
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+shadow_filter_smooth = 1.0
+texture = ExtResource("2_2c3xn")
+texture_scale = 0.25

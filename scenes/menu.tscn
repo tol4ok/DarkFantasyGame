@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://dka1etwr8pkgn"]
+
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_q6lnp"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q6lnp")
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 191.0
+offset_right = 560.0
+offset_bottom = 336.0
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="ButtonsContainer"]
+layout_mode = 2
+text = "Играть"
+
+[node name="SettingsButton" type="Button" parent="ButtonsContainer"]
+layout_mode = 2
+text = "Настройки"
+
+[node name="ExitButton" type="Button" parent="ButtonsContainer"]
+layout_mode = 2
+text = "Выход"
+
+[node name="LinkButton" type="LinkButton" parent="."]
+modulate = Color(1, 1, 0, 1)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 564.0
+offset_right = 107.0
+offset_bottom = 591.0
+text = "Free Robux"
+underline = 1
+uri = "https://youtu.be/xvFZjo5PgG0"
