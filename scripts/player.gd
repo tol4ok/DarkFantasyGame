@@ -6,11 +6,12 @@ class_name Player
 @onready var upper_body_collision = $UpperBodyCollision
 @onready var stats: EntityStats = $EntityStats
 @onready var state_machine: StateMachine = $StateMachine
-
 @onready var particles = $GPUParticles2D
-
-var damage_test = DamageInfo.new(1, 2, DamageInfo.DamageType.Physical)
-
+# ------------ #
+# --- TEMP --- #
+var damage_test = DamageInfo.new(4, 2, DamageInfo.DamageType.Physical)
+# --- TEMP --- #
+# ------------ #
 var input_x: float = 0
 var is_crouch: bool = false
 
@@ -32,10 +33,14 @@ func _input(event):
 		is_crouch = true
 	elif event.is_action_released("crouch"):
 		is_crouch = !is_crouch
+	# ------------ #
+	# --- TEMP --- #
 	if event is InputEventKey and event.pressed:
 		match event.keycode:
 			KEY_1: stats.recieve_damage(damage_test)
 			KEY_2: stats.recieve_heal(1)
+	# --- TEMP --- #
+	# ------------ #
 
 func flip_to_left(is_left: bool):
 	particles.process_material.gravity.x = -100 if is_left else 100 
@@ -44,9 +49,9 @@ func flip_to_left(is_left: bool):
 
 func attack():
 	for body in hit_box.get_overlapping_bodies():
-		if body.has_node("res://scripts/entity_stats.gd"):
+		if body is Enemy:
 			body.stats.recieve_damage(damage_test)
-		print_debug(body)
+		print("Attacked ", body)
 
 func apply_gravity():
 	velocity.y += stats.gravity

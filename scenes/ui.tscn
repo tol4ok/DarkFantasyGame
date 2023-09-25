@@ -17,9 +17,8 @@ metadata/_edit_group_ = true
 layout_mode = 0
 offset_left = 8.0
 offset_top = 7.0
-offset_right = 18.0
+offset_right = 49.0
 offset_bottom = 10.0
-scale = Vector2(4.1, 1)
 color = Color(0.858824, 0.207843, 0.207843, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="HealthBar"]

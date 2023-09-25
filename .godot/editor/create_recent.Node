@@ -1,6 +1,11 @@
-Panel
+PlayerHurt
+EnemyAir
+EnemyAttack
+EnemyRun
+EnemyIdle
 TextureRect
 ColorRect
+Panel
 CollisionShape2D
 Area2D
 StateMachine
@@ -16,9 +21,7 @@ VBoxContainer
 PlayerRoll
 PlayerSlide
 PlayerCrouch
-PlayerAir
 PlayerRun
-PlayerIdle
 Timer
 CPUParticles2D
 Node2D
@@ -28,6 +31,3 @@ CanvasModulate
 Sprite2D
 ParallaxLayer
 ParallaxBackground
-LightOccluder2D
-TextureButton
-Control

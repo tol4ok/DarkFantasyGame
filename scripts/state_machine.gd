@@ -36,5 +36,4 @@ func on_child_tansitioned(state, new_state_name):
 	current_state.enter()
 	
 	#if target and target is Player: target.update_animation()
-	
-	print_rich("[color=yellow]Switched state to[/color]: ", current_state.name.get_slice("Player", 1))
+	print_rich("[color=yellow]Switched state to[/color]: ", current_state.name)

@@ -1,7 +1,7 @@
-extends PlayerState
-class_name PlayerAttack
+extends EnemyState
+class_name EnemyAttack
 
-var duration: float = 0.75
+var duration: float = 0.5
 
 func _ready():
 	animation_name = "attack"
@@ -9,20 +9,20 @@ func _ready():
 func enter():
 	duration = 0.5
 	play_animation()
-	player.attack()
+	enemy.attack()
 
 func exit():
 	pass
 
 func update(delta):
-	if !player.is_on_floor():
+	if !enemy.is_on_floor():
 		emit_signal("transitioned", self, "PlayerAir")
 	if duration > 0:
 		duration -= delta
 	else:
 		emit_signal("transitioned", self, "PlayerIdle")
 	
-	player.apply_friction()
+	enemy.apply_friction()
 
 func _input(_event):
 	pass

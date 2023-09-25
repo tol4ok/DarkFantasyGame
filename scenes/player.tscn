@@ -1,4 +1,4 @@
-[gd_scene load_steps=149 format=3 uid="uid://demh1idk4h5vq"]
+[gd_scene load_steps=150 format=3 uid="uid://demh1idk4h5vq"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_6unf3"]
 [ext_resource type="Texture2D" uid="uid://dir8h3ywalu2h" path="res://assets/2D_SL_Knight_v1.0/Attacks.png" id="2_8l40o"]
@@ -25,6 +25,7 @@
 [ext_resource type="Script" path="res://scripts/player states/player_slide.gd" id="16_f5v0d"]
 [ext_resource type="Script" path="res://scripts/player states/player_roll.gd" id="17_otjx2"]
 [ext_resource type="Script" path="res://scripts/player states/player_attack.gd" id="25_btm1c"]
+[ext_resource type="Script" path="res://scripts/player states/player_hurt.gd" id="26_ir6mf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjngv"]
 atlas = ExtResource("11_awkue")
@@ -747,7 +748,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"hurt",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -954,9 +955,9 @@ script = ExtResource("1_6unf3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_77wig")
-animation = &"jump"
+animation = &"hurt"
 autoplay = "stand_idle"
-frame = 4
+frame = 2
 frame_progress = 1.0
 
 [node name="UpperBodyCollision" type="CollisionShape2D" parent="."]
@@ -1006,6 +1007,9 @@ script = ExtResource("17_otjx2")
 
 [node name="PlayerAttack" type="Node" parent="StateMachine"]
 script = ExtResource("25_btm1c")
+
+[node name="PlayerHurt" type="Node" parent="StateMachine"]
+script = ExtResource("26_ir6mf")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(0, 32)

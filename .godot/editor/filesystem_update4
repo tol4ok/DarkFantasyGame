@@ -1,10 +1,22 @@
+res://scenes/player.tscn
+res://scripts/entity_stats.gd
+res://scenes/test_scene.tscn
 res://scenes/parallax_background.tscn
 res://scenes/ui.tscn
-res://scenes/test_scene.tscn
-res://scenes/player.tscn
 res://scenes/menu.tscn
 res://scenes/campfire.tscn
 res://scenes/enemy.tscn
-res://scripts/entity_stats.gd
 res://scripts/player.gd
-res://scripts/damage_info.gd
+res://scripts/player states/player_run.gd
+res://scripts/state.gd
+res://scripts/player states/player_state.gd
+res://scripts/enemy_behavior.gd
+res://scripts/player states/player_attack.gd
+res://scripts/enemy states/enemy_state.gd
+res://scripts/enemy states/enemy_idle.gd
+res://scripts/enemy states/enemy_air.gd
+res://scripts/enemy.gd
+res://scripts/enemy states/enemy_attack.gd
+res://scripts/enemy states/enemy_run.gd
+res://scripts/state_machine.gd
+res://scripts/player states/player_hurt.gd

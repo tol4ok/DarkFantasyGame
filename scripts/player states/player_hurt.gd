@@ -1,0 +1,25 @@
+extends PlayerState
+class_name PlayerHurt
+
+var duration: float = 0.5
+
+func _ready():
+	animation_name = "hurt"
+
+func enter():
+	play_animation()
+
+func update(_delta):
+	if player.is_on_floor():
+		emit_signal("transitioned", self, "PlayerIdle")
+	if duration > 0:
+		duration -= _delta
+	elif player.is_crouch:
+		emit_signal("transitioned", self, "PlayerCrouch")
+	elif player.input_x != 0:
+		emit_signal("transitioned", self, "PlayerRun")
+	else:
+		emit_signal("transitioned", self, "PlayerIdle")
+		
+	player.apply_acceleration()
+	

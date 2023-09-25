@@ -119,7 +119,7 @@ animations = [{
 "texture": ExtResource("18_yaia2")
 }],
 "loop": true,
-"name": &"run",
+"name": &"walk",
 "speed": 6.0
 }]
 
@@ -139,8 +139,9 @@ shape = SubResource("RectangleShape2D_aqijr")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -27)
 sprite_frames = SubResource("SpriteFrames_excbg")
-animation = &"run"
+animation = &"attack"
 autoplay = "idle"
+frame_progress = 0.257348
 offset = Vector2(19, 0)
 
 [node name="EntityStats" type="Node" parent="." node_paths=PackedStringArray("health_bar")]
