@@ -3102,7 +3102,7 @@ layer_1/tile_data = PackedInt32Array(1507328, 983040, 31, 1572864, 983040, 32, 1
 
 [node name="Campfire" parent="Campfires" instance=ExtResource("3_pekec")]
 position = Vector2(182, 320)
-frame_progress = 0.645041
+frame_progress = 0.812033
 
 [node name="Enemy" parent="." instance=ExtResource("4_dm6m0")]
 position = Vector2(256, 347)

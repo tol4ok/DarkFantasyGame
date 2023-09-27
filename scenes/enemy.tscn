@@ -139,7 +139,7 @@ shape = SubResource("RectangleShape2D_aqijr")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -27)
 sprite_frames = SubResource("SpriteFrames_excbg")
-animation = &"run"
+animation = &"idle"
 autoplay = "idle"
 offset = Vector2(19, 0)
 
@@ -169,12 +169,14 @@ script = ExtResource("27_u6vyn")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="View"]
 position = Vector2(104, -8)
 shape = SubResource("RectangleShape2D_f4ddg")
+debug_color = Color(0, 0.631373, 0.47451, 0.419608)
 
 [node name="HitBox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(40.5, -8)
 shape = SubResource("RectangleShape2D_kgjxu")
+debug_color = Color(1, 0.6, 0.701961, 0.419608)
 
 [node name="Background" type="ColorRect" parent="."]
 offset_left = -8.0
