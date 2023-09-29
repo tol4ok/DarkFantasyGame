@@ -23,8 +23,8 @@ func _physics_process(_delta):
 	move_and_slide()
 
 func _input(event):
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = -stats.jump_force
+	if Input.is_action_just_pressed("jump") and is_on_floor() and not(get_state() is PlayerHurt):
+		jump()
 	if event.is_action_pressed("move_left"):
 		flip_to_left(true)
 	elif event.is_action_pressed("move_right"):
@@ -37,15 +37,28 @@ func _input(event):
 	# --- TEMP --- #
 	if event is InputEventKey and event.pressed:
 		match event.keycode:
-			KEY_1: stats.recieve_damage(damage_test)
+			KEY_1: hurt(damage_test)
 			KEY_2: stats.recieve_heal(1)
 	# --- TEMP --- #
 	# ------------ #
+
+func get_state() -> PlayerState:
+	return state_machine.current_state
 
 func flip_to_left(is_left: bool):
 	particles.process_material.gravity.x = -100 if is_left else 100 
 	sprite.flip_h = is_left
 	hit_box.position.x = -21 if is_left else 21
+
+func jump():
+	velocity.y = -stats.jump_force
+
+#
+# todo: Remove a state switching from the Player's class
+#
+func hurt(damage: DamageInfo):
+	stats.recieve_damage(damage)
+	state_machine.current_state.transitioned.emit(state_machine.current_state, "PlayerHurt")
 
 func attack():
 	for body in hit_box.get_overlapping_bodies():

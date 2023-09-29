@@ -1,3 +1,8 @@
+BoxContainer
+HBoxContainer
+VBoxContainer
+Label
+Control
 PlayerHurt
 EnemyAir
 EnemyAttack
@@ -17,7 +22,6 @@ PlayerAttack
 GPUParticles2D
 LinkButton
 Button
-VBoxContainer
 PlayerRoll
 PlayerSlide
 PlayerCrouch
@@ -27,7 +31,3 @@ CPUParticles2D
 Node2D
 WorldEnvironment
 Node
-CanvasModulate
-Sprite2D
-ParallaxLayer
-ParallaxBackground

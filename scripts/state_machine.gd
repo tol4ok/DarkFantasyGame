@@ -4,6 +4,8 @@ class_name StateMachine
 @export var initial_state: State
 @export var target: Node
 
+@export var _state_label: Label
+
 var current_state: State
 var states: Dictionary = {}
 
@@ -35,5 +37,6 @@ func on_child_tansitioned(state, new_state_name):
 	current_state = new_state
 	current_state.enter()
 	
-	#if target and target is Player: target.update_animation()
-	print_rich("[color=yellow]Switched state to[/color]: ", current_state.name)
+	if _state_label:
+		_state_label.text = current_state.name
+	#print_rich("[color=yellow]Switched state to[/color]: ", current_state.name)

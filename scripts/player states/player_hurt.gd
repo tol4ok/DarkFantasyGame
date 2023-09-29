@@ -7,11 +7,12 @@ func _ready():
 	animation_name = "hurt"
 
 func enter():
+	duration = 0.5
 	play_animation()
 
 func update(_delta):
-	if player.is_on_floor():
-		emit_signal("transitioned", self, "PlayerIdle")
+	if !player.is_on_floor():
+		emit_signal("transitioned", self, "PlayerAir")
 	if duration > 0:
 		duration -= _delta
 	elif player.is_crouch:
@@ -21,5 +22,5 @@ func update(_delta):
 	else:
 		emit_signal("transitioned", self, "PlayerIdle")
 		
-	player.apply_acceleration()
+	player.apply_friction()
 	
