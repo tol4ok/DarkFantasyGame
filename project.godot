@@ -29,6 +29,10 @@ window/size/viewport_height=600
 
 project/assembly_name="Dark Fantasy Game"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
+
 [input]
 
 move_right={

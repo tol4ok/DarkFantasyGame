@@ -38,5 +38,9 @@ func on_child_tansitioned(state, new_state_name):
 	current_state.enter()
 	
 	if _state_label:
-		_state_label.text = current_state.name
+		if current_state.name.begins_with("Player"):
+			_state_label.text = "Player state: " + current_state.name.get_slice("Player", 1)
+		if current_state.name.begins_with("Enemy"):
+			_state_label.text = "Enemy state: " + current_state.name.get_slice("Enemy", 1)
+		
 	#print_rich("[color=yellow]Switched state to[/color]: ", current_state.name)

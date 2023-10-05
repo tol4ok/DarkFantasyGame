@@ -9,13 +9,13 @@ func _ready():
 func enter():
 	play_animation()
 	duration = 1.0
-	player.shrinck_collision()
+	player.set_upper_collision_disabled(true)
 	player.velocity *= 1.4
 	player.stats.friction = 1.5
 	player.particles.set_emitting(true)
 
 func exit():
-	player.unshrink_collision()
+	player.set_upper_collision_disabled(false)
 	player.stats.friction = 32
 	player.particles.set_emitting(false)
 

@@ -1,6 +1,10 @@
-BoxContainer
-HBoxContainer
+AudioStreamPlayer2D
+Sprite2D
 VBoxContainer
+HBoxContainer
+BoxContainer
+TextureProgressBar
+MarginContainer
 Label
 Control
 PlayerHurt
@@ -27,7 +31,3 @@ PlayerSlide
 PlayerCrouch
 PlayerRun
 Timer
-CPUParticles2D
-Node2D
-WorldEnvironment
-Node

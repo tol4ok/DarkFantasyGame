@@ -1,11 +1,4 @@
 res://scenes/enemy.tscn
 res://scripts/enemy.gd
-res://scenes/player.tscn
 res://scripts/player.gd
-res://scripts/entity_stats.gd
-res://scenes/test_scene.tscn
-res://scenes/parallax_background.tscn
-res://scenes/ui.tscn
-res://scenes/menu.tscn
-res://scenes/campfire.tscn
-res://scripts/state_machine.gd
+res://scenes/player.tscn

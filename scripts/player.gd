@@ -53,9 +53,7 @@ func flip_to_left(is_left: bool):
 func jump():
 	velocity.y = -stats.jump_force
 
-#
-# todo: Remove a state switching from the Player's class
-#
+## todo: Remove a state switching from the Player's class
 func hurt(damage: DamageInfo):
 	stats.recieve_damage(damage)
 	state_machine.current_state.transitioned.emit(state_machine.current_state, "PlayerHurt")
@@ -74,11 +72,6 @@ func apply_friction():
 	
 func apply_acceleration():
 	velocity.x = move_toward(velocity.x, input_x * stats.movement_speed, stats.acceleration)
-	
-func shrinck_collision():
-	upper_body_collision.disabled = true
-	print_rich("[color=green]Collision shrinked[/color]")
 
-func unshrink_collision():
-	upper_body_collision.disabled = false
-	print_rich("[color=green]Collision UNshrinked[/color]")
+func set_upper_collision_disabled(_is_active: bool):
+	upper_body_collision.disabled = _is_active

@@ -6,10 +6,10 @@ func _ready():
 
 func enter():
 	play_animation()
-	player.shrinck_collision()
+	player.set_upper_collision_disabled(true)
 
 func exit():
-	player.unshrink_collision()
+	player.set_upper_collision_disabled(false)
 
 func update(_delta):
 	if !player.is_on_floor():

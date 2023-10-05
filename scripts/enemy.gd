@@ -52,9 +52,7 @@ func on_body_exited_view(body: Node2D):
 func jump():
 	velocity.y = -stats.jump_force
 
-#
-# todo: Remove a state switching from the Enemy's class
-#
+## todo: Remove a state switching from the Enemy's class
 func attack():
 	state_machine.current_state.transitioned.emit(state_machine.current_state, "EnemyAttack")
 

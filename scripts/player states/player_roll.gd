@@ -9,12 +9,12 @@ func _ready():
 func enter():
 	play_animation()
 	duration = 0.5
-	player.shrinck_collision()
+	player.set_upper_collision_disabled(true)
 	player.velocity.x = 200 * player.input_x
 	player.stats.friction = 1.5
 
 func exit():
-	player.unshrink_collision()
+	player.set_upper_collision_disabled(false)
 	player.stats.friction = 32
 
 func update(delta):
