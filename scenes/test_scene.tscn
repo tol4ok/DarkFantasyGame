@@ -3113,9 +3113,6 @@ _state_label = NodePath("../../UI/MarginContainer/DebugInfo/EnemyStateLabel")
 [node name="Player" parent="." instance=ExtResource("1_2v60p")]
 position = Vector2(105, 336)
 
-[node name="EntityStats" parent="Player" index="3" node_paths=PackedStringArray("health_bar")]
-health_bar = NodePath("../../UI/MarginContainer/PlayerBars/HealthBar")
-
 [node name="StateMachine" parent="Player" index="6" node_paths=PackedStringArray("_state_label")]
 _state_label = NodePath("../../UI/MarginContainer/DebugInfo/PlayerStateLabel")
 
@@ -3128,6 +3125,12 @@ limit_bottom = 480
 position_smoothing_enabled = true
 
 [node name="UI" parent="." instance=ExtResource("7_wabqc")]
+
+[node name="HealthBar" parent="UI/MarginContainer/PlayerBars" index="0" node_paths=PackedStringArray("stats")]
+stats = NodePath("../../../../Player/EntityStats")
+
+[node name="HealPotionsBar" parent="UI/MarginContainer/PlayerBars" index="1" node_paths=PackedStringArray("player")]
+player = NodePath("../../../../Player")
 
 [editable path="ParallaxBackground"]
 [editable path="Enemy"]

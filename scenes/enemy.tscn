@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bgh08efd6n42h"]
+[gd_scene load_steps=39 format=3 uid="uid://bgh08efd6n42h"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_rgtyx"]
 [ext_resource type="Texture2D" uid="uid://dknli5aibtee1" path="res://assets/HeroAndOpponents/4 Enemy/PNG/attack-A1.png" id="2_0i6k3"]
@@ -31,6 +31,7 @@
 [ext_resource type="Script" path="res://scripts/enemy states/enemy_run.gd" id="26_34hta"]
 [ext_resource type="Script" path="res://scripts/enemy states/enemy_air.gd" id="27_u6vyn"]
 [ext_resource type="Script" path="res://scripts/enemy states/enemy_attack.gd" id="28_ijrrh"]
+[ext_resource type="Script" path="res://scripts/health_bar.gd" id="32_xq02o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqijr"]
 size = Vector2(16, 60)
@@ -146,6 +147,13 @@ size = Vector2(190, 180)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kgjxu"]
 size = Vector2(62, 10)
 
+[sub_resource type="Gradient" id="Gradient_8clax"]
+colors = PackedColorArray(0.501961, 0, 0, 1, 0, 0.501961, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xjmtl"]
+gradient = SubResource("Gradient_8clax")
+width = 16
+
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_rgtyx")
 
@@ -161,9 +169,8 @@ autoplay = "idle"
 frame_progress = 0.884475
 offset = Vector2(19, 0)
 
-[node name="EntityStats" type="Node" parent="." node_paths=PackedStringArray("health_bar")]
+[node name="EntityStats" type="Node" parent="."]
 script = ExtResource("6_hiq7t")
-health_bar = NodePath("../Background/HeathBar")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state", "target")]
 script = ExtResource("7_288em")
@@ -204,10 +211,14 @@ offset_right = 8.0
 offset_bottom = -44.0
 color = Color(0.252028, 0.252028, 0.252028, 1)
 
-[node name="HeathBar" type="ColorRect" parent="Background"]
+[node name="HeathBar" type="TextureProgressBar" parent="Background" node_paths=PackedStringArray("stats")]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 1.0
 offset_right = 15.0
 offset_bottom = 3.0
-color = Color(0.768627, 0.12549, 0.12549, 1)
+value = 100.0
+nine_patch_stretch = true
+texture_progress = SubResource("GradientTexture1D_xjmtl")
+script = ExtResource("32_xq02o")
+stats = NodePath("../../EntityStats")

@@ -1,4 +1,11 @@
-res://scenes/enemy.tscn
-res://scripts/enemy.gd
-res://scripts/player.gd
+res://scenes/ui.tscn
+res://scenes/test_scene.tscn
 res://scenes/player.tscn
+res://scenes/enemy.tscn
+res://scenes/entity.tscn
+res://scripts/player.gd
+res://scripts/health_bar.gd
+res://scripts/entity_stats.gd
+res://scripts/entity.gd
+res://scripts/heal_potions_bar.gd
+res://scripts/enemy states/enemy_attack.gd

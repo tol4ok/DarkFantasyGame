@@ -12,7 +12,7 @@ func exit():
 	player.particles.set_emitting(false)
 
 func update(_delta):
-	if player.input_x == 0:
+	if player.move_direction == 0:
 		emit_signal("transitioned", self, "PlayerIdle")
 	if !player.is_on_floor():
 		emit_signal("transitioned", self, "PlayerAir")

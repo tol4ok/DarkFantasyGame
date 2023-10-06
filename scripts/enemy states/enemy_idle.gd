@@ -13,7 +13,7 @@ func exit():
 func update(_delta):
 	if !enemy.is_on_floor():
 		emit_signal("transitioned", self, "EnemyAir")
-	if enemy.direction != 0:
+	if enemy.move_direction != 0:
 		emit_signal("transitioned", self, "EnemyRun")
 	
 	enemy.apply_friction()

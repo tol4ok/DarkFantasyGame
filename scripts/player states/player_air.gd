@@ -8,7 +8,7 @@ func enter():
 	play_animation()
 
 func update(_delta):
-	if player.is_on_floor() and player.input_x != 0:
+	if player.is_on_floor() and player.move_direction != 0:
 		emit_signal("transitioned", self, "PlayerRun")
 	elif player.is_on_floor():
 		emit_signal("transitioned", self, "PlayerIdle")

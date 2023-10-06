@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bik1js4giyuwp"]
+
+[ext_resource type="Script" path="res://scripts/entity.gd" id="1_tlyj0"]
+[ext_resource type="Script" path="res://scripts/state_machine.gd" id="2_wdx13"]
+[ext_resource type="Script" path="res://scripts/entity_stats.gd" id="3_kajlf"]
+
+[node name="Entity" type="CharacterBody2D"]
+script = ExtResource("1_tlyj0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("2_wdx13")
+
+[node name="EntityStats" type="Node" parent="."]
+script = ExtResource("3_kajlf")

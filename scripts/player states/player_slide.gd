@@ -26,7 +26,7 @@ func update(delta):
 		duration -= delta
 	elif player.is_crouch:
 		emit_signal("transitioned", self, "PlayerCrouch")
-	elif player.input_x != 0:
+	elif player.move_direction != 0:
 		emit_signal("transitioned", self, "PlayerRun")
 	else:
 		emit_signal("transitioned", self, "PlayerIdle")

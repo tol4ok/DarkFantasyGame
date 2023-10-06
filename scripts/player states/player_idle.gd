@@ -13,7 +13,7 @@ func exit():
 func update(_delta):
 	if !player.is_on_floor():
 		emit_signal("transitioned", self, "PlayerAir")
-	if player.input_x != 0:
+	if player.move_direction != 0:
 		emit_signal("transitioned", self, "PlayerRun")
 	if player.is_crouch:
 		emit_signal("transitioned", self, "PlayerCrouch")

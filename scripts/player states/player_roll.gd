@@ -10,7 +10,7 @@ func enter():
 	play_animation()
 	duration = 0.5
 	player.set_upper_collision_disabled(true)
-	player.velocity.x = 200 * player.input_x
+	player.velocity.x = 200 * player.move_direction
 	player.stats.friction = 1.5
 
 func exit():

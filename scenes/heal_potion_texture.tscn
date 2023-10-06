@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6clxyjstymp3"]
+
+[ext_resource type="Texture2D" uid="uid://27lbpv2tuodu" path="res://assets/UI/heal_potion.png" id="1_0mdv1"]
+
+[node name="HealPotionTexture" type="TextureRect"]
+custom_minimum_size = Vector2(32, 32)
+texture = ExtResource("1_0mdv1")

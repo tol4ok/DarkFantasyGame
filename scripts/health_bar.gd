@@ -1,7 +1,11 @@
-extends Control
+extends TextureProgressBar
 
-var max_rect_size = 10
+@export var stats: EntityStats
 
-func _on_entity_stats_health_changed(new_value, applied_value):
-	print("health changed by ", applied_value, " new health value ", new_value)
-	$ColorRect.size = Vector2(new_value, 3)
+func _ready():
+	max_value = stats.max_health
+	value = stats.max_health
+	stats.health_changed.connect(_on_health_changed)
+
+func _on_health_changed(_new_value, _applied_value):
+	value = _new_value

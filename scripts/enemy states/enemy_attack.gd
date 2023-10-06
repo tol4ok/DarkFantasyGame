@@ -26,7 +26,6 @@ func update(delta):
 	if duration < 0.6 and not is_attacked:
 		is_attacked = true
 		for body in enemy.hit_box.get_overlapping_bodies():
-			print("Attacked ", body)
 			if body is Player:
 				body.hurt(enemy.damage_test)
 	
